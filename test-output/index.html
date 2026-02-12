@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="testRunner.PIM" class="method navigator-link" hash-for-method="executionMethod">executionMethod</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="testRunner.PIM" class="method navigator-link" hash-for-method="verifyPIMPage">verifyPIMPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -126,9 +126,9 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="executionMethod">
-                  </a> <!-- executionMethod -->
-                  <span class="method-name">executionMethod</span>
+                  <a name="verifyPIMPage">
+                  </a> <!-- verifyPIMPage -->
+                  <span class="method-name">verifyPIMPage</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -143,6 +143,7 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;parameter name=&quot;reportfilename&quot; value=&quot;OrangeHrm&quot;/&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;testRunner.PIM&quot;/&gt;
@@ -187,14 +188,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'executionMethod')
+data.setCell(0, 1, 'verifyPIMPage')
 data.setCell(0, 2, 'testRunner.PIM')
-data.setCell(0, 3, 41474);
+data.setCell(0, 3, 302302);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 41 seconds</span>
+              <span class="suite-total-time">Total running time: 5 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -221,10 +222,26 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">testRunner.PIM</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">executionMethod</span>
+              <div class="configuration-suite before">
+                <span class="method-name">preSetup(OrangeHrm)</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-class before">
+                <span class="method-name">setup</span>
+                <span class="method-start">266 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">verifyPIMPage</span>
+                <span class="method-start">3753 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=verifyPIMPage status=SUCCESS method=PIM.verifyPIMPage()[pri:0, instance:testRunner....)</span>
+                <span class="method-start">306062 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-suite after">
+                <span class="method-name">postCleanup</span>
+                <span class="method-start">306789 ms</span>
+              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

@@ -1,21 +1,18 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class OrangeHRM_Login_Page
+public class OrangeHRM_Login_Page extends BasePage
 {
-	WebDriver driver;
-	public OrangeHRM_Login_Page(WebDriver idriver)
+	public OrangeHRM_Login_Page(WebDriver driver)
 	{
-		driver=idriver;
-		PageFactory.initElements(driver, this);
+		super(driver); 
 	}
-	@FindBy (name="username") WebElement usernm;
-	@FindBy (name="password") WebElement pass;
-	@FindBy (xpath="//button[@type='submit']") WebElement loginBtn;
+	By usernm = By.name("username");
+	By pass = By.name("password");
+	By loginBtn = By.xpath("//button[@type='submit']");
+	By dashboardHeading = By.xpath("//h6[text()='Dashboard']");
 	
 	public void url(String url)
 	{
@@ -23,15 +20,16 @@ public class OrangeHRM_Login_Page
 	}
 	public void enterUserName(String un)
 	{
-		usernm.sendKeys(un);
+		sendKeys(usernm, un);
 	}
 	public void enterPassword(String pw)
 	{
-		pass.sendKeys(pw);
+		sendKeys(pass, pw);
 	}
-	public void clickOnLoginBtn() throws InterruptedException
+	public boolean clickOnLoginBtn() throws InterruptedException
 	{
-		loginBtn.click();	
+		click(loginBtn);
 		Thread.sleep(5000);
+		return isDisplayed(dashboardHeading);
 	}
 }
